@@ -2,6 +2,7 @@ import NavItem from '@/components/shared/NavItem';
 import Fonts from '@/components/shared/navbarComponents/Fonts';
 import GraphicTempl from '@/components/shared/navbarComponents/GraphicTempl';
 import Graphics from '@/components/shared/navbarComponents/Graphics';
+import More from '@/components/shared/navbarComponents/More';
 import Music from '@/components/shared/navbarComponents/Music';
 import PresentationTemplate from '@/components/shared/navbarComponents/Presentation';
 import SoundEffects from '@/components/shared/navbarComponents/SoundEffects';
@@ -24,7 +25,7 @@ const Navbar = () => {
         { label: 'Presentation Templates', url: '/', component: <PresentationTemplate /> },
         { label: 'Photos', url: '/'},
         { label: 'Fonts', url: '/', component:<Fonts/> },
-        { label: 'More', url: '/', id: '' },
+        { label: 'More', component: <More/>, url: '/'},
     ]
 
     const handleMouseEnter = (component) => {
