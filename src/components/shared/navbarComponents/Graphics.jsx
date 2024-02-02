@@ -3,12 +3,17 @@ import Link from 'next/link'
 import Arrow from '/public/assets/arrow.png'
 import React from 'react'
 
-export default function StockVideo() {
+export default function Graphics() {
 
     const Items = [
-        { subLable: 'Stock Footage', subUrl: '/' },
-        { subLable: 'Motion Graphics', subUrl: '/' },
-        { subLable: 'All Stock Video', subUrl: '/' },
+        { subLable: 'Backgrounds', subUrl: '/' },
+        { subLable: 'Textures', subUrl: '/' },
+        { subLable: 'Social', subUrl: '/' },
+        { subLable: 'Patterns', subUrl: '/' },
+        { subLable: 'Icons', subUrl: '/' },
+        { subLable: 'Objects', subUrl: '/' },
+        { subLable: 'Illustrations', subUrl: '/' },
+        { subLable: 'All Graphics', subUrl: '/' },
 
     ]
 

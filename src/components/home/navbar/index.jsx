@@ -1,5 +1,12 @@
 import NavItem from '@/components/shared/NavItem';
+import Fonts from '@/components/shared/navbarComponents/Fonts';
+import GraphicTempl from '@/components/shared/navbarComponents/GraphicTempl';
+import Graphics from '@/components/shared/navbarComponents/Graphics';
+import Music from '@/components/shared/navbarComponents/Music';
+import PresentationTemplate from '@/components/shared/navbarComponents/Presentation';
+import SoundEffects from '@/components/shared/navbarComponents/SoundEffects';
 import StockVideo from '@/components/shared/navbarComponents/StockVideo';
+import VideoTempl from '@/components/shared/navbarComponents/VideoTempl';
 import Link from 'next/link'
 import React, { useState } from 'react'
 
@@ -8,15 +15,15 @@ const Navbar = () => {
     const [activeComponent, setActiveComponent] = useState(null);
 
     const navMenu = [
-        { label: 'Stock Video', component: <StockVideo />, url: '/', id: 'stock-video' },
-        { label: 'Video Templates', url: '/', id: '' },
-        { label: 'Music', url: '/', id: '' },
-        { label: 'Sound Effects', url: '/', id: '' },
-        { label: 'Graphic Templates', url: '/', id: '' },
-        { label: 'Graphics', url: '/', id: '' },
-        { label: 'Presentation Templates', url: '/', id: '' },
-        { label: 'Photos', url: '/', id: '' },
-        { label: 'Fonts', url: '/', id: '' },
+        { label: 'Stock Video', url: '/', component: <StockVideo /> },
+        { label: 'Video Templates', url: '/', component: <VideoTempl /> },
+        { label: 'Music', url: '/', component: <Music /> },
+        { label: 'Sound Effects', url: '/', component: <SoundEffects /> },
+        { label: 'Graphic Templates', url: '/', component: <GraphicTempl /> },
+        { label: 'Graphics', url: '/', component: <Graphics /> },
+        { label: 'Presentation Templates', url: '/', component: <PresentationTemplate /> },
+        { label: 'Photos', url: '/'},
+        { label: 'Fonts', url: '/', component:<Fonts/> },
         { label: 'More', url: '/', id: '' },
     ]
 

@@ -3,13 +3,14 @@ import Link from 'next/link'
 import Arrow from '/public/assets/arrow.png'
 import React from 'react'
 
-export default function StockVideo() {
+export default function Fonts() {
 
     const Items = [
-        { subLable: 'Stock Footage', subUrl: '/' },
-        { subLable: 'Motion Graphics', subUrl: '/' },
-        { subLable: 'All Stock Video', subUrl: '/' },
-
+        { subLable: 'Serif', subUrl: '/' },
+        { subLable: 'Sans-Serif', subUrl: '/' },
+        { subLable: 'Script and Handwritten', subUrl: '/' },
+        { subLable: 'Decorative', subUrl: '/' },
+        { subLable: 'All Fonts', subUrl: '/' },
     ]
 
     return (
