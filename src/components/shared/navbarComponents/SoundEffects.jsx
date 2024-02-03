@@ -24,7 +24,7 @@ export default function SoundEffects() {
 
     return (
         <div className='relative'>
-            <div className='absolute grid grid-cols-2 w-[34rem] pl-4 gap-2 flex-col pt-6 my-4 pb-4 bg-white shadow-lg p-2 rounded-b-md'>
+            <div className='absolute grid grid-cols-2 lg:w-[34rem] w-80 pl-4 gap-2 flex-col pt-6 my-4 pb-4 bg-white shadow-lg p-2 rounded-b-md'>
                 {Items.map((subItem, subIndex) => (
                     <Link href={subItem.subUrl} key={subIndex}>
                         <h1 className={`p-2 px-3 hover:bg-primary rounded-lg w-fit gap-2 text-darkGray flex items-center ${subIndex === Items.length - 1 ? 'justify-between font-bold' : ''}`}>

@@ -16,7 +16,7 @@ export default function VideoTempl() {
 
     return (
         <div className='relative'>
-            <div className='absolute flex w-96 px-4 gap-2 pl-4  pt-6 flex-col my-4 pb-4 bg-white shadow-lg p-2 rounded-b-md'>
+            <div className='absolute flex lg:w-96 w-80 px-4 gap-2 pl-4  pt-6 flex-col my-4 pb-4 bg-white shadow-lg p-2 rounded-b-md'>
                 {
                     Items.map((subItem, subIndex) => (
                         <Link href={subItem.subUrl} key={subIndex}>

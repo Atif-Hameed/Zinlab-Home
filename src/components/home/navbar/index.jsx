@@ -27,7 +27,7 @@ const Navbar = ({ openNav, handleOpenNav }) => {
         { label: 'Graphic Templates', url: '/', component: <GraphicTempl /> },
         { label: 'Graphics', url: '/', component: <Graphics /> },
         { label: 'Presentation Templates', url: '/', component: <PresentationTemplate /> },
-        { label: 'Photos', url: '/' },
+        { label: 'Photos', url: '/', },
         { label: 'Fonts', url: '/', component: <Fonts /> },
         { label: 'More', component: <More />, url: '/' },
     ]
@@ -59,7 +59,7 @@ const Navbar = ({ openNav, handleOpenNav }) => {
                             {openNav && <Image alt='' src={Arrow} className='h-5 w-5' />}
                         </h1>
                         {activeComponent && (
-                            <div className={`absolute lg:-left-6 ${openNav && top-0} z-50 hidden group-hover:block bg-white shadow-lg rounded-md`}>
+                            <div className={`absolute lg:-left-6 lg:top-[25px] z-50 hidden group-hover:block bg-white shadow-lg rounded-md`}>
                                 {activeComponent}
                             </div>
                         )}

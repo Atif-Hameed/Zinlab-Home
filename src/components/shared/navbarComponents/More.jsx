@@ -52,7 +52,7 @@ export default function More() {
 
     return (
         <div className='relative'>
-            <div className='absolute -right-40 w-[40rem] pl-4 flex my-4 bg-white shadow-lg rounded-b-md'>
+            <div className='absolute lg:-right-40 lg:top-0 -top-28 w-[40rem] pl-4 flex my-4 bg-white shadow-lg rounded-b-md'>
                 <div className='w-[40%] border-r-2 border-primary flex gap-3 flex-col pt-6 pb-4 p-2'>
                     {
                         Items.map((item, index) => (

@@ -11,15 +11,20 @@ import Navbar from '../navbar'
 const Header = () => {
 
   const [openNav, setOpenNav] = useState(false)
+  const [openSearch, setOpenSearch] = useState(false)
 
   const handleOpenNav = () => {
     setOpenNav((prev) => !prev)
   }
 
+  const handleOpenSearch = () => {
+    setOpenSearch((prev) => !prev)
+  }
+
   return (
     <>
-      <div className='sm:px-8 px-4 shadow-md'>
-        <div className='bg-white w-full flex items-center '>
+      <div className='sm:px-8 px-4 py-3 shadow-md'>
+        <div className='bg-white w-full flex items-center z-50 '>
 
           <div className='w-[68%] lg:flex hidden justify-between items-center'>
             <div className='w-[30%]'>
@@ -49,7 +54,7 @@ const Header = () => {
               <BrandLogo />
             </div>
             <div>
-              <Image src={SearchIcon} className='w-9 h-9' alt='' />
+              <Image onClick={handleOpenSearch} src={SearchIcon} className='w-9 h-9' alt='' />
             </div>
           </div>
         </div>
@@ -59,6 +64,14 @@ const Header = () => {
         <Navbar openNav={openNav} handleOpenNav={handleOpenNav} />
       </div>
       {openNav && <div className="fixed inset-0 bg-black opacity-50 z-10"></div>}
+      
+      {openSearch &&
+        <div className="fixed inset-0 bg-white flex gap-2 py-3 px-2 z-40">
+          <input type="text" className='h-10 w-full px-3 border-2 self-start border-green-500' placeholder='Search' name="" id="" />
+          <button onClick={handleOpenSearch} className='text-black pt-2 self-start'>cancel</button>
+        </div>
+      }
+
     </>
   )
 }
