@@ -17,44 +17,49 @@ const Header = () => {
   }
 
   return (
-    <div className='flex flex-col gap-10 pt-3 sm:px-8 px-4 shadow-md'>
-      <div className='bg-white w-full flex items-center '>
+    <>
+      <div className='sm:px-8 px-4 shadow-md'>
+        <div className='bg-white w-full flex items-center '>
 
-        <div className='w-[68%] lg:flex hidden justify-between items-center'>
-          <div className='w-[30%]'>
-            <BrandLogo />
-          </div>
-          <div className='w-[55%]'>
-            <SearchField />
-          </div>
-        </div>
-
-        <div className='w-[32%] lg:flex hidden justify-end'>
-          <div className='flex gap-6 items-center'>
-            <div>
-              <h1 className='font-medium text-lg'>Log in</h1>
+          <div className='w-[68%] lg:flex hidden justify-between items-center'>
+            <div className='w-[30%]'>
+              <BrandLogo />
             </div>
-            <button className='bg-[#4866e2] py-3 px-6 rounded-full text-white'>
-              Sign up
-            </button>
+            <div className='w-[55%]'>
+              <SearchField />
+            </div>
           </div>
-        </div>
 
-        <div className='lg:hidden flex items-center justify-between w-full bg-white'>
-          <div>
-            <Image onClick={handleOpenNav} src={Menu} className='sm:w-10 sm:h-10 w-8 h-8' alt='' />
+          <div className='w-[32%] lg:flex hidden justify-end'>
+            <div className='flex gap-6 items-center'>
+              <div>
+                <h1 className='font-medium text-lg'>Log in</h1>
+              </div>
+              <button className='bg-[#4866e2] py-3 px-6 rounded-full text-white'>
+                Sign up
+              </button>
+            </div>
           </div>
-          <div>
-            <BrandLogo />
-          </div>
-          <div>
-            <Image src={SearchIcon} className='w-9 h-9' alt='' />
+
+          <div className='lg:hidden flex items-center justify-between w-full bg-white'>
+            <div>
+              <Image onClick={handleOpenNav} src={Menu} className='sm:w-10 sm:h-10 w-8 h-8' alt='' />
+            </div>
+            <div>
+              <BrandLogo />
+            </div>
+            <div>
+              <Image src={SearchIcon} className='w-9 h-9' alt='' />
+            </div>
           </div>
         </div>
       </div>
 
-      <Navbar />
-    </div>
+      <div className={`lg:block shadow-md lg:pt-8 pt-0 bg-white  ${openNav ? 'block absolute top-0' : 'hidden'}`}>
+        <Navbar openNav={openNav} handleOpenNav={handleOpenNav} />
+      </div>
+      {openNav && <div className="fixed inset-0 bg-black opacity-50 z-10"></div>}
+    </>
   )
 }
 

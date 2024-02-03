@@ -1,4 +1,5 @@
 import NavItem from '@/components/shared/NavItem';
+import BrandLogo from '@/components/shared/common/BrandLogo';
 import Fonts from '@/components/shared/navbarComponents/Fonts';
 import GraphicTempl from '@/components/shared/navbarComponents/GraphicTempl';
 import Graphics from '@/components/shared/navbarComponents/Graphics';
@@ -8,10 +9,13 @@ import PresentationTemplate from '@/components/shared/navbarComponents/Presentat
 import SoundEffects from '@/components/shared/navbarComponents/SoundEffects';
 import StockVideo from '@/components/shared/navbarComponents/StockVideo';
 import VideoTempl from '@/components/shared/navbarComponents/VideoTempl';
+import CloseIcon from '/public/assets/close.svg'
+import Arrow from '/public/assets/rightArrow.png'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import Image from 'next/image';
 
-const Navbar = () => {
+const Navbar = ({ openNav, handleOpenNav }) => {
 
     const [activeComponent, setActiveComponent] = useState(null);
 
@@ -23,9 +27,9 @@ const Navbar = () => {
         { label: 'Graphic Templates', url: '/', component: <GraphicTempl /> },
         { label: 'Graphics', url: '/', component: <Graphics /> },
         { label: 'Presentation Templates', url: '/', component: <PresentationTemplate /> },
-        { label: 'Photos', url: '/'},
-        { label: 'Fonts', url: '/', component:<Fonts/> },
-        { label: 'More', component: <More/>, url: '/'},
+        { label: 'Photos', url: '/' },
+        { label: 'Fonts', url: '/', component: <Fonts /> },
+        { label: 'More', component: <More />, url: '/' },
     ]
 
     const handleMouseEnter = (component) => {
@@ -38,16 +42,24 @@ const Navbar = () => {
 
 
     return (
-        <div className='flex items-center w-[92%] justify-between pl-7'>
+        <div className='flex lg:flex-row flex-col lg:items-center xl:w-[92%] w-[22rem] gap-3 lg:static fixed lg:bg-inherit z-30 bg-white lg:h-auto h-screen lg:justify-between xl:pl-14'>
+
+            <div className='lg:hidden flex gap-6 items-center justify-between px-4 pt-2 pb-8'>
+                <BrandLogo />
+                <Image alt='' src={CloseIcon} onClick={handleOpenNav} className={`${openNav ? 'block' : 'hidden'} h-8 w-8`} />
+            </div>
 
             {
                 navMenu.map((item, index) => (
-                    <Link href={item.url} key={index} className='group relative nav-link pb-4'
+                    <Link href={item.url} key={index} className={`group relative ${!openNav && 'nav-link'} pb-4 lg:px-0 px-8`}
                         onMouseEnter={() => handleMouseEnter(item.component)}
                         onMouseLeave={handleMouseLeave}>
-                        <h1 className='text-base font-medium text-darkGray'>{item.label}</h1>
+                        <h1 className='text-base font-medium flex text-darkGray justify-between'>
+                            {item.label}
+                            {openNav && <Image alt='' src={Arrow} className='h-5 w-5' />}
+                        </h1>
                         {activeComponent && (
-                            <div className="absolute -left-6 hidden group-hover:block bg-white shadow-lg rounded-md">
+                            <div className={`absolute lg:-left-6 ${openNav && top-0} z-50 hidden group-hover:block bg-white shadow-lg rounded-md`}>
                                 {activeComponent}
                             </div>
                         )}
