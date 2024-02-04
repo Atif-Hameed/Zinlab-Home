@@ -1,4 +1,5 @@
 import Bookmarks from '@/components/home/bookmark';
+import Footer from '@/components/home/footer';
 import FromPdf from '@/components/home/fromPdf';
 import FromPdfCarousel from '@/components/home/fromPdfCarousel';
 import Header from '@/components/home/header'
@@ -12,6 +13,7 @@ export default function Home() {
       <FromPdfCarousel />
       <FromPdf />
       <ToPdf/>
+      <Footer/>
     </div>
   );
 }
