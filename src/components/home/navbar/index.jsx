@@ -1,4 +1,3 @@
-import NavItem from '@/components/shared/NavItem';
 import BrandLogo from '@/components/shared/common/BrandLogo';
 import Fonts from '@/components/shared/navbarComponents/Fonts';
 import GraphicTempl from '@/components/shared/navbarComponents/GraphicTempl';
@@ -42,7 +41,7 @@ const Navbar = ({ openNav, handleOpenNav }) => {
 
 
     return (
-        <div className='flex lg:flex-row flex-col lg:items-center xl:w-[92%] w-[22rem] gap-3 lg:static fixed lg:bg-inherit z-30 bg-white lg:h-auto h-screen lg:justify-between xl:pl-14'>
+        <div className='flex lg:flex-row flex-col lg:items-center lg:w-[92%] sm:w-[40%] w-[70%] xl:gap-3 gap-1 lg:static fixed lg:bg-inherit z-30 bg-white lg:h-auto h-screen lg:justify-between xl:pl-14 lg:pl-4'>
 
             <div className='lg:hidden flex gap-6 items-center justify-between px-4 pt-2 pb-8'>
                 <BrandLogo />
