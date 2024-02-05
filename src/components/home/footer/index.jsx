@@ -45,7 +45,7 @@ const Footer = () => {
                         <div className='flex xl:gap-8 md:gap-6 gap-4 flex-wrap'>
                             {
                                 Links.map((item, index) => (
-                                    <Link key={index} href={item.url} className='text-darkGray text-lg'>
+                                    <Link key={index} href={item.url} className='text-darkGray sm:text-lg text-base'>
                                         {item.label}
                                     </Link>
                                 ))
