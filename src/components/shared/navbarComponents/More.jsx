@@ -7,20 +7,20 @@ import React, { useState } from 'react'
 const MoreContent = ({ main }) => {
     return (
         <div>
-            <h1 className='text-darkGray text-xl font-bold'>{main} Heading</h1>
-            <div className='flex flex-col gap-2 pt-3'>
-                <div className='flex flex-col gap-2 w-full items-center'>
-                    <Link href={'/'} className='p-2 font-bold text-darkGray hover:bg-primary'>{main} Links 1</Link>
-                    <Link href={'/'} className='p-2 font-bold text-darkGray hover:bg-primary'>{main} Links 2</Link>
-                    <Link href={'/'} className='p-2 font-bold text-darkGray hover:bg-primary'>{main} Links 3</Link>
-                    <Link href={'/'} className='p-2 font-bold text-darkGray hover:bg-primary'>{main} Links 3</Link>
+            <h1 className='text-darkGray sm:text-xl text-lg font-bold'>{main} Heading</h1>
+            <div className='flex flex-col gap-2 sm:pt-3 pt-2'>
+                <div className='flex flex-col sm:gap-2 gap-0 w-full items-center'>
+                    <Link href={'/'} className='sm:p-2 p-1 sm:font-semibold text-darkGray hover:bg-primary'>{main} Links 1</Link>
+                    <Link href={'/'} className='sm:p-2 p-1 sm:font-semibold text-darkGray hover:bg-primary'>{main} Links 2</Link>
+                    <Link href={'/'} className='sm:p-2 p-1 sm:font-semibold text-darkGray hover:bg-primary'>{main} Links 3</Link>
+                    <Link href={'/'} className='sm:p-2 p-1 sm:font-semibold text-darkGray hover:bg-primary'>{main} Links 3</Link>
                 </div>
 
-                <h1 className='font-bold text-darkGray'>{main} Heading 2</h1>
+                <h1 className='font-semibold text-darkGray'>{main} Heading 2</h1>
                 <p className=''>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, numquam?</p>
             </div>
-            <div className='flex gap-2 pt-10'>
-                <h1 className='font-bold text-darkGray'>All {main} Products</h1>
+            <div className='flex gap-2 sm:pt-10 pt-6'>
+                <h1 className='font-semibold text-darkGray'>All {main} Products</h1>
                 <Image src={Arrow2} className='h-5 w-6' alt='' />
             </div>
         </div>
@@ -52,14 +52,14 @@ export default function More() {
 
     return (
         <div className='relative'>
-            <div className='absolute lg:-right-40 lg:top-0 -top-28 w-[40rem] pl-4 flex my-4 bg-white shadow-lg rounded-b-md'>
-                <div className='w-[40%] border-r-2 border-primary flex gap-3 flex-col pt-6 pb-4 p-2'>
+            <div className='absolute lg:-right-40 lg:top-0 -top-28 sm:w-[40rem] w-[20rem] overflow-x-scroll sm:pl-4 pl-2 flex my-4 bg-white shadow-lg rounded-b-md'>
+                <div className='w-[40%] border-r-2 border-primary flex sm:gap-3 gap-1 flex-col sm:pt-6 pt-4 sm:pb-4 pb-2 sm:p-2 p-1'>
                     {
                         Items.map((item, index) => (
                             <Link href={item.subUrl} key={index} className='group relative '
                                 onMouseEnter={() => handleMouseEnter(item.component)}
                                 onMouseLeave={handleMouseLeave}>
-                                <h1 className={`p-2 px-3 hover:bg-primary rounded-lg w-full  gap-2 text-darkGray flex items-center justify-between font-bold`}>
+                                <h1 className={`sm:p-2 p-1 px-3 hover:bg-primary rounded-lg w-full  sm:gap-2 gap-1 text-darkGray flex items-center justify-between font-semibold`}>
                                     {item.subLable}
                                     {index === Items.length - 1 ? '' : <Image src={Arrow} className='h-5 w-6' alt='' />}
                                 </h1>
@@ -67,7 +67,7 @@ export default function More() {
                         ))
                     }
                 </div>
-                <div className='w-[60%] pl-4 my-4 bg-white '>
+                <div className='w-[60%] pl-4 my-4 bg-white sm:relative '>
                     {activeComponent ? (
                         <div className="hidden group-hover:block w-full">
                             {activeComponent}

@@ -45,7 +45,7 @@ const Navbar = ({ openNav, handleOpenNav }) => {
 
             <div className='lg:hidden flex gap-6 items-center justify-between px-4 pt-2 pb-8'>
                 <BrandLogo />
-                <Image alt='' src={CloseIcon} onClick={handleOpenNav} className={`${openNav ? 'block' : 'hidden'} h-8 w-8`} />
+                <Image alt='' src={CloseIcon} onClick={handleOpenNav} className={`${openNav ? 'block' : 'hidden'} sm:h-8 h-5 sm:w-8 w-5`} />
             </div>
 
             {
