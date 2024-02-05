@@ -40,7 +40,7 @@ const Footer = () => {
                 </div>
                 <div className='h-[1px] w-full md:my-10 my-6 bg-gray-300' ></div>
                 <div className='flex justify-between items-center w-full flex-wrap'>
-                    <div className='flex xl:gap-12 lg:gap-8 gap-6  items-center flex-wrap'>
+                    <div className='flex xl:gap-12 lg:gap-8 sm:gap-6 gap-4  items-center flex-wrap'>
                         <BrandLogo />
                         <div className='flex xl:gap-8 md:gap-6 gap-4 flex-wrap'>
                             {
@@ -52,8 +52,8 @@ const Footer = () => {
                             }
                         </div>
                     </div>
-                    <div className='p-3 rounded-full bg-secondary lg:mt-0 mt-5'>
-                        <Image alt='' src={Moon} className='h-8 w-8' />
+                    <div className='sm:p-3 p-2 rounded-full bg-secondary lg:mt-0 sm:mt-5 mt-3'>
+                        <Image alt='' src={Moon} className='sm:h-8 h-6 sm:w-8 w-6' />
                     </div>
                 </div>
             </div>
