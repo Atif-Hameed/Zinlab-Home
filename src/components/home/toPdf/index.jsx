@@ -18,7 +18,7 @@ const ToPdf = () => {
 
     return (
         <>
-            <div className='xl:px-32 sm:px-12 px-4 py-16'>
+            <div className='xl:px-32 sm:px-12 px-4 sm:py-16 py-8'>
                 <h1 className='sm:text-4xl text-2xl font-bold'>Convert to PDF</h1>
                 <div className='grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 sm:gap-6 gap-4 pt-10'>
                     {

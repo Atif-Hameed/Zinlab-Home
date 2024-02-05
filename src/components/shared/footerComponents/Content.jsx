@@ -1,57 +1,53 @@
 const { default: Link } = require("next/link")
 
 
-const Content1 = ({ main, link1, link2, link3, link4, link5, link6, link7 }) => {
-    return (
-        <div className='flex flex-col gap-10'>
-            <h1 className='text-xl font-semibold' >{main}</h1>
-            <div className='flex flex-col gap-6'>
-                <Link href='/' className='text-lg text-darkGray hover:text-black'>{link1}</Link>
-                <Link href='/' className='text-lg text-darkGray hover:text-black'>{link2}</Link>
-                <Link href='/' className='text-lg text-darkGray hover:text-black'>{link3}</Link>
-                <Link href='/' className='text-lg text-darkGray hover:text-black'>{link4}</Link>
-                <Link href='/' className='text-lg text-darkGray hover:text-black'>{link5}</Link>
-                <Link href='/' className='text-lg text-darkGray hover:text-black'>{link6}</Link>
-                <Link href='/' className='text-lg text-darkGray hover:text-black'>{link7}</Link>
-            </div>
-        </div>
-    )
-}
-const Content2 = ({ main, link1, link2, link3, link4, link5, link6, link7 }) => {
-    return (
-        <div className='flex flex-col gap-10'>
-            <h1 className='text-xl font-semibold' >{main}</h1>
-            <div className='flex flex-col gap-6'>
-                <Link href='/' className='text-lg text-darkGray hover:text-black'>{link1}</Link>
-                <Link href='/' className='text-lg text-darkGray hover:text-black'>{link2}</Link>
-                <Link href='/' className='text-lg text-darkGray hover:text-black'>{link3}</Link>
-            </div>
-        </div>
-    )
-}
-
 export const InternalLinks = () => {
+
+    const Content1 = [
+        { lablel: 'Internal Links', url: '/' },
+        { lablel: 'Documentaries', url: '/' },
+        { lablel: 'Themes', url: '/' },
+        { lablel: 'Chrome casts', url: '/' },
+    ]
+
     return (
-        <Content2
-            main="Internal Links"
-            link1="Documentaries"
-            link2="Themes"
-            link3="Chrome casts"
-        />
+        <>
+            <div className="flex flex-col md:gap-4 gap-2">
+                {
+                    Content1.map((item, index) => (
+                        <Link href={item.url} key={index} >
+                            <h1 className={`${index === 0 && 'font-semibold text-lg md:pb-4 pb-2 text-black'} sm:text-lg text-base text-darkGray hover:text-black`} >{item.lablel}</h1>
+                        </Link>
+                    ))
+                }
+            </div>
+        </>
     )
 }
 
 export const EnterPrise = () => {
+
+    const Content2 = [
+        { lablel: 'Enterprise', url: '/' },
+        { lablel: 'Download Chrome Browser', url: '/' },
+        { lablel: 'Chrome Browser for', url: '/' },
+        { lablel: 'Chrome Browser Devices', url: '/' },
+        { lablel: 'ChromeOS', url: '/' },
+        { lablel: 'Google Cloud', url: '/' },
+        { lablel: 'Google Workspace', url: '/' },
+    ]
+
     return (
-        <Content1
-            main="Enterprise"
-            link1="Download Chrome Browser"
-            link2="Chrome Browser for"
-            link3="Enterprise"
-            link4="Chrome Browser Devices"
-            link5="ChromeOS"
-            link6="Google Cloud"
-            link7="Google Workspace"
-        />
+        <>
+            <div className="flex flex-col md:gap-4 gap-2">
+                {
+                    Content2.map((item, index) => (
+                        <Link href={item.url} key={index} >
+                            <h1 className={`${index === 0 && 'font-semibold cursor-text text-lg md:pb-4 pb-2 text-black'} sm:text-lg text-base text-darkGray hover:text-black`} >{item.lablel}</h1>
+                        </Link>
+                    ))
+                }
+            </div>
+        </>
     )
 }

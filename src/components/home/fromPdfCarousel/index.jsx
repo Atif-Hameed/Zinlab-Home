@@ -88,9 +88,9 @@ const FromPdfCarousel = () => {
 
     return (
         <>
-            <div className='xl:px-32 sm:px-12 px-4 py-16 w-full'>
+            <div className='xl:px-32 sm:px-12 px-4 sm:py-16 py-8 w-full'>
                 <div className='flex justify-between items-center w-full '>
-                    <h1 className='text-4xl font-bold'>Convert from PDF</h1>
+                    <h1 className='sm:text-4xl text-2xl font-bold'>Convert from PDF</h1>
                     <button onClick={toggleShowAll} className='flex gap-1 items-center bg-secondary p-1 px-3 rounded-full'>
                         {showAll ? 'Hide' : 'All'}
                         <Image alt='' src={Arrow} className='h-4 w-4' />
